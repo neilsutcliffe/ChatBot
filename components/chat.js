@@ -6,6 +6,7 @@ import {
   Text,
   ScrollView,
   TextInput,
+	KeyboardAvoidingView,
   View
 } from 'react-native';
 import Colours from '../styles/colours.js';
@@ -30,11 +31,13 @@ class MessageHistory extends Component {
 		var messages = this.props.messages;
 		var i = 0;
     return (
-    <View style={chatStyles.messageHistory}>
+    <KeyboardAvoidingView  style={chatStyles.messageHistory}>
+			<ScrollView>
 				{ messages.map(message => 
 					<Message key={i++} message={message} />
 				)}
-    </View >
+			</ScrollView>
+    </KeyboardAvoidingView  >
     )
   }
 }
