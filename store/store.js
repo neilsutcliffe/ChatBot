@@ -9,7 +9,6 @@ var chatReducers = (state = initalState, action) => {
       case "AddMessage":
         return Object.assign( {}, state, { messages: [...state.messages, action.payload] })
     }
-
     return state;
   }
 

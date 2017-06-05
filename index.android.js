@@ -20,6 +20,8 @@ import MainStore from './store/store.js';
 import MainActions from './store/actions.js';
 import Chat from './components/chat.js';
 
+import colours from './styles/colours.js'
+
 const mainStore = MainStore();
 
 
@@ -49,19 +51,13 @@ class Header extends Component {
   render() {
     return (
       <View style={mainStyles.header}>
-        <Text>MayBot 6000</Text>
+        <Text style={mainStyles.headerText}>MayBot 6000</Text>
       </View>
     )
   }
 }
 
 
-const colours = {
-  backgroundMain: '#FAFAFA',
-  messageLocal: '#027BFD',
-  messageRemote: '#E6E5EB',
-  headerColour: '#F3F4F6'
-}
 
 const mainStyles = StyleSheet.create({
   container: {
@@ -71,10 +67,14 @@ const mainStyles = StyleSheet.create({
     backgroundColor: colours.backgroundMain
   },
   header: {
-    backgroundColor: colours.headerColour,
+    backgroundColor: colours.toryBlue,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  headerText: {
+    fontWeight: 'bold',
+    color: colours.troyBlueContrast
   }
 });
 
